@@ -1,0 +1,17 @@
+name: DocSearch Scrap
+
+on:
+  repository_dispatch:
+    types: [docsearch_update]
+  workflow_dispatch:
+
+jobs:
+  log-message:
+    name: Log Message
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Log Deployment Success
+        run: echo "DocSearch Scrap triggered successfully after Vercel deployment."
